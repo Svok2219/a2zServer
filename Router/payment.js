@@ -4,7 +4,7 @@ require("dotenv").config();
 // console.log(process.env.STRIPE_SECRET_KEY);
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", null);
 
-router.post("/payout", async (req, res) => {
+router.post("/", async (req, res) => {
   const { token = {}, amount = 0 } = req.body;
 
   if (!Object.keys(token).length || !amount) {
